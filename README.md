@@ -8,7 +8,83 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-body{font-family:Poppins,sans-serif}
+:root{
+  --bg:#050505;
+  --card:#0b0b0b;
+  --text:#e5e7eb;
+  --muted:#9ca3af;
+  --accent:#22c55e;   /* hijau neon */
+  --blue:#3b82f6;
+  --yellow:#facc15;
+}
+/* ===== LIGHT MODE ===== */
+.light{
+  --bg:#f5f7fb;
+  --card:#ffffff;
+  --text:#0f172a;
+  --muted:#64748b;
+  --accent:#22c55e;
+  --blue:#2563eb;
+  --yellow:#f59e0b;
+}
+
+.light body{
+  background:linear-gradient(135deg,#eef2ff,#f8fafc);
+}
+
+/* card versi terang */
+.light .card{
+  background:white;
+  color:#0f172a;
+  border:1px solid rgba(34,197,94,.4);
+  box-shadow:
+    0 6px 20px rgba(0,0,0,.08),
+    0 0 20px rgba(34,197,94,.15);
+}
+
+/* glow versi terang */
+.light .card::before{
+  filter:blur(20px);
+  opacity:.35;
+}
+
+/* harga versi terang */
+.light .price{
+  color:#16a34a;
+  text-shadow:none;
+}
+
+/* header */
+.light header{
+  background:white;
+  border-color:#e5e7eb;
+}
+.light header p{
+  color:#64748b;
+}
+
+/* footer */
+.light footer{
+  background:#f8fafc;
+  color:#334155;
+}
+
+/* marquee versi terang */
+.light .marquee{
+  background:#e5e7eb;
+  border-color:#22c55e;
+}
+.light .marquee span{
+  color:#0f172a;
+  text-shadow:none;
+}
+
+body{
+  font-family:Poppins,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
 .page{animation:slide .4s ease}
 @keyframes slide{
 from{opacity:0;transform:translateX(30px) scale(.97);filter:blur(5px)}
@@ -18,8 +94,8 @@ to{opacity:1;transform:translateX(0) scale(1);filter:blur(0)}
 /* ===== GLOW SYSTEM ===== */
 .card{
   position:relative;
-  background:#050505;
-  color:white;
+  background:var(--card);
+  color:var(--text);
   padding:1.3rem;
   border-radius:1rem;
   font-weight:600;
@@ -28,16 +104,19 @@ to{opacity:1;transform:translateX(0) scale(1);filter:blur(0)}
   align-items:center;
   cursor:pointer;
   transition:.35s;
-  box-shadow:0 0 15px rgba(34,197,94,.25),0 0 35px rgba(34,197,94,.15);
+  border:1px solid rgba(34,197,94,.35);
+  box-shadow:
+    0 0 12px rgba(34,197,94,.25),
+    0 0 40px rgba(34,197,94,.15);
 }
 .card::before{
   content:"";
   position:absolute;
   inset:-2px;
   border-radius:1rem;
-  background:linear-gradient(120deg,#22c55e,#3b82f6,#22c55e);
+  background:linear-gradient(120deg,var(--accent),var(--blue),var(--accent));
   filter:blur(18px);
-  opacity:.6;
+  opacity:.55;
   z-index:-1;
   animation:glow 3s infinite alternate;
 }
@@ -49,7 +128,10 @@ to{opacity:1;transform:translateX(0) scale(1);filter:blur(0)}
 }
 
 .menu-active{
-  box-shadow:0 0 25px rgba(34,197,94,1),0 0 80px rgba(59,130,246,1)!important;
+  border-color:var(--accent)!important;
+  box-shadow:
+    0 0 30px var(--accent),
+    0 0 80px rgba(59,130,246,.9)!important;
 }
 
 /* buttons */
@@ -65,13 +147,78 @@ to{opacity:1;transform:translateX(0) scale(1);filter:blur(0)}
 }
 .back-btn:hover{transform:scale(1.05)}
 
-.price{color:#22c55e;font-weight:bold}
-.ket-btn{background:#facc15;color:black;padding:.2rem .6rem;border-radius:.5rem;font-size:.75rem}
-.ket-box{display:none;color:#facc15;font-size:.85rem;padding-left:.5rem;margin-top:.3rem}
+.price{
+  color:var(--accent);
+  font-weight:700;
+  text-shadow:
+    0 0 6px rgba(34,197,94,.7),
+    0 0 14px rgba(34,197,94,.4);
+}
+
+.ket-btn{
+  background:var(--yellow);
+  color:#000;
+  padding:.25rem .6rem;
+  border-radius:.5rem;
+  font-size:.75rem;
+  font-weight:700;
+  box-shadow:0 0 8px rgba(250,204,21,.6);
+}
+.ket-box{
+  display:none;
+  color:var(--yellow);
+  font-size:.85rem;
+  padding-left:.6rem;
+  margin-top:.4rem;
+  line-height:1.5;
+}
+
+.marquee{
+  width:100%;
+  overflow:hidden;
+  position:relative;
+  background:#000;
+  border-top:1px solid #22c55e;
+  border-bottom:1px solid #22c55e;
+}
+
+.marquee-track{
+  display:flex;
+  width:max-content;
+  animation:scroll 25s linear infinite;
+}
+
+.marquee span{
+  padding:12px 60px;
+  white-space:nowrap;
+  font-weight:600;
+  color:#ffffff;
+  text-shadow:0 0 10px rgba(34,197,94,.8);
+  font-size:.95rem;
+}
+
+/* loop tanpa jeda */
+@keyframes scroll{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
+}
+
 </style>
 </head>
 
 <body class="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white">
+<div class="marquee">
+  <div class="marquee-track">
+    <span> Harga sewaktu waktu bisa berubah</span>
+    <span> Silahkan kunjungi langsung Gerai PasirPogorCell</span>
+    <span> CS 0838-4484-3020</span>
+
+    <!-- DUPLIKAT agar loop sempurna -->
+    <span> Harga sewaktu waktu bisa berubah</span>
+    <span> Silahkan kunjungi langsung Gerai PasirPogorCell</span>
+    <span> CS 0838-4484-3020</span>
+  </div>
+</div>
 
 <header class="p-6 text-center border-b border-gray-700">
 <h1 class="text-4xl font-bold">PasirPogorCell</h1>
