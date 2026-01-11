@@ -209,14 +209,14 @@ to{opacity:1;transform:translateX(0) scale(1);filter:blur(0)}
 <body class="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white">
 <div class="marquee">
   <div class="marquee-track">
-    <span> ⮕ Harga sewaktu waktu bisa berubah ⬅</span>
-    <span> ⮕ Silahkan kunjungi langsung Gerai PasirPogorCell ⬅</span>
-    <span> ⮕ CS 0838-4484-3020 ⬅</span>
+    <span> [ Harga sewaktu waktu bisa berubah ]</span>
+    <span> [ Silahkan kunjungi langsung Gerai PasirPogorCell ]</span>
+    <span> [ CS 0838-4484-3020 ]</span>
 
     <!-- DUPLIKAT agar loop sempurna -->
-    <span> ⮕ Harga sewaktu waktu bisa berubah ⬅</span>
-    <span> ⮕ Silahkan kunjungi langsung Gerai PasirPogorCell ⬅</span>
-    <span> ⮕ CS 0838-4484-3020 ⬅</span>
+    <span> [ Harga sewaktu waktu bisa berubah ]</span>
+    <span> [ Silahkan kunjungi langsung Gerai PasirPogorCell ]</span>
+    <span> [ CS 0838-4484-3020 ]</span>
   </div>
 </div>
 
