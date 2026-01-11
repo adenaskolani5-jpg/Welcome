@@ -1,3 +1,4 @@
+untuk fitur pencarian harganya sudah berfungsi, tapi saya ingin mengubah tampilannya sperti halnya fitur pencarian
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -8,117 +9,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-.pop-glow {
-  box-shadow: 0 0 6px #22c55e, 0 0 12px #22c55e;
-  animation: popGlow 2s infinite alternate;
-}
-
-@keyframes popGlow {
-  0% {
-    box-shadow: 0 0 6px #22c55e, 0 0 12px #22c55e;
-  }
-  50% {
-    box-shadow: 0 0 12px #22c55e, 0 0 24px #22c55e;
-  }
-  100% {
-    box-shadow: 0 0 6px #22c55e, 0 0 12px #22c55e;
-  }
-}
-
-/* Tombol angka & operator biasa */
-.calc-btn {
-  background-color: #10b981; /* hijau light-saber */
-  color: white;
-  font-weight: bold;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  transition: all 0.2s;
-}
-.calc-btn:hover {
-  background-color: #34d399;
-  transform: scale(1.05);
-}
-
-/* Tombol operasi + - / * */
-.calc-op {
-  background-color: #059669; /* hijau gelap */
-  color: white;
-  font-weight: bold;
-  padding: 1rem;
-  border-radius: 0.5rem;
-}
-.calc-op:hover {
-  background-color: #10b981;
-  transform: scale(1.05);
-}
-
-/* Tombol khusus C, =, X/⌫ tetap putih */
-.calc-special {
-  background-color: white;
-  color: black;
-  font-weight: bold;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  border: 2px solid #d1d5db; /* abu tipis */
-}
-.calc-special:hover {
-  background-color: #f3f4f6;
-  transform: scale(1.05);
-}
-
-.modal-box{
-  background:#020b05;
-  border:1px solid #22c55e;
-  border-radius:1rem;
-  box-shadow:0 0 25px rgba(34,197,94,.6),0 0 60px rgba(34,197,94,.4);
-  animation: pop .3s ease-out;
-}
-
-@keyframes pop{
-  from{transform:scale(.9);opacity:0}
-  to{transform:scale(1);opacity:1}
-}
-
-.input-green{
-  background:#000;
-  border:1px solid #22c55e;
-  color:#22c55e;
-  border-radius:.5rem;
-  padding:.5rem;
-  width:100%;
-  outline:none;
-  box-shadow:0 0 10px rgba(34,197,94,.5);
-}
-
-.input-green:focus{
-  box-shadow:0 0 18px rgba(34,197,94,.9);
-}
-
-.pop-btn{
-  padding:.4rem .9rem;
-  border-radius:.6rem;
-  border:1px solid #22c55e;
-  color:#22c55e;
-  background:#000;
-  font-size:.8rem;
-  font-weight:600;
-  cursor:pointer;
-  transition:.25s;
-  box-shadow:0 0 6px rgba(34,197,94,.4);
-}
-
-.pop-btn:hover{
-  transform:scale(1.08);
-  box-shadow:0 0 12px rgba(34,197,94,.9);
-}
-
-.pop-btn.active{
-  background:#22c55e;
-  color:black;
-  transform:scale(1.1);
-  box-shadow:0 0 18px #22c55e, 0 0 40px #22c55e;
-}
-
 :root{
   --bg:#050505;
   --card:#0b0b0b;
@@ -281,23 +171,6 @@ body{
   text-shadow:0 0 10px rgba(34,197,94,.8);
   font-size:.95rem;
 }
-.pop-glow {
-  box-shadow: 0 0 6px #22c55e, 0 0 12px #22c55e;
-  animation: popGlow 2s infinite alternate;
-}
-
-@keyframes popGlow {
-  0% {
-    box-shadow: 0 0 6px #22c55e, 0 0 12px #22c55e;
-  }
-  50% {
-    box-shadow: 0 0 12px #22c55e, 0 0 24px #22c55e;
-  }
-  100% {
-    box-shadow: 0 0 6px #22c55e, 0 0 12px #22c55e;
-  }
-}
-
 @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 </style>
 </head>
@@ -324,40 +197,40 @@ body{
 
 <!-- Tombol Kalkulator & Populer -->
 <div class="flex justify-center gap-4 my-4">
-<!-- Pencarian -->
+<!-- Harga -->
 <div class="flex flex-col items-center">
   <button onclick="openHarga()"
-    class="w-24 border border-green-400 text-green-400 text-xs py-2 rounded-md hover:bg-green-400 hover:text-black transition pop-glow">
-    Cari
+    class="w-24 border border-green-400 text-green-400 text-xs py-2 rounded-md hover:bg-green-400 hover:text-black transition">
+    Harga
   </button>
 </div>
 
-<!-- Kalkulator -->
-<div class="flex flex-col items-center">
-  <button onclick="openCalculator()"
-    class="w-24 border border-green-400 text-green-400 text-xs py-2 rounded-md hover:bg-green-400 hover:text-black transition pop-glow">
-    Kalkulator
-  </button>
-</div>
+  <!-- Kalkulator -->
+  <div class="flex flex-col items-center">
+    <button onclick="openCalculator()"
+      class="w-24 border border-green-400 text-green-400 text-xs py-2 rounded-md hover:bg-green-400 hover:text-black transition">
+      Kalkulator
+    </button>
+  </div>
 
-<!-- Populer -->
-<div class="flex flex-col items-center">
-  <button onclick="openPopular()"
-    class="w-24 border border-green-400 text-green-400 text-xs py-2 rounded-md hover:bg-green-400 hover:text-black transition pop-glow">
-    Populer
-  </button>
-</div>
+  <!-- Populer -->
+  <div class="flex flex-col items-center">
+    <button onclick="openPopular()"
+      class="w-24 border border-green-400 text-green-400 text-xs py-2 rounded-md hover:bg-green-400 hover:text-black transition">
+      Populer
+    </button>
+  </div>
 
 </div>
 <div id="hargaModal"
  class="fixed inset-0 bg-black/70 flex items-center justify-center opacity-0 pointer-events-none z-50 transition-opacity duration-300">
 
- <div class="modal-box p-6 w-80 relative">
-   <h2 class="text-xl font-bold mb-3">Cari Paket & Top Up Game</h2>
+ <div class="bg-gray-900 text-white rounded-xl p-6 w-80 relative transform scale-95 transition-transform duration-300">
+   <h2 class="text-xl font-bold mb-3">Cek Harga</h2>
 
-<input id="searchHarga"
- class="input-green mb-3"
- placeholder="Cari paket atau game..."
+   <input id="searchHarga"
+    type="text"
+    placeholder="Ketik nama paket / game..."
     class="w-full p-2 rounded bg-gray-800 mb-3 text-sm">
 
    <div id="hasilHarga" class="space-y-2 max-h-60 overflow-y-auto text-sm"></div>
@@ -374,11 +247,11 @@ body{
     <h2 class="text-xl font-bold mb-4">Paket & Game Populer</h2>
     
     <!-- Filter -->
-<div class="flex justify-center gap-3 mb-4">
-  <button onclick="selectPopular(this,'paket')" class="pop-btn">Paket</button>
-  <button onclick="selectPopular(this,'game')" class="pop-btn">Game</button>
-  <button onclick="selectPopular(this,'all')" class="pop-btn active">Semua</button>
-</div>
+    <div class="flex justify-center gap-2 mb-4">
+      <button onclick="showPopular('paket')" class="bg-green-500 hover:bg-green-600 px-3 py-1 rounded text-sm font-semibold">Paket</button>
+      <button onclick="showPopular('game')" class="bg-yellow-500 hover:bg-yellow-600 px-3 py-1 rounded text-sm font-semibold">Game</button>
+      <button onclick="showPopular('all')" class="bg-blue-500 hover:bg-blue-600 px-3 py-1 rounded text-sm font-semibold">Semua</button>
+    </div>
 
     <ul id="popularList" class="list-disc pl-5 space-y-2">
       <!-- Data akan dimasukkan lewat JS -->
@@ -388,24 +261,6 @@ body{
 </div>
 
 <script>
-function selectPopular(btn,type){
-  document.querySelectorAll(".pop-btn").forEach(b=>{
-    b.classList.remove("active");
-  });
-
-  btn.classList.add("active");
-
-  const list = document.getElementById("popularList");
-  list.style.opacity="0";
-  list.style.transform="translateY(10px)";
-
-  setTimeout(()=>{
-    showPopular(type);
-    list.style.opacity="1";
-    list.style.transform="translateY(0)";
-  },200);
-}
-
 const popularItems = {
   paket: [
     "Paket 10GB Reguler 30 Hari",
@@ -424,8 +279,7 @@ function openPopular() {
   const modal = document.getElementById('popularModal');
   modal.classList.remove('pointer-events-none', 'opacity-0');
   modal.querySelector('div').classList.remove('scale-95');
-
-  selectPopular(document.querySelector(".pop-btn.active"),"all");
+  showPopular('all'); // default tampil semua
 }
 
 function closePopular() {
@@ -514,108 +368,37 @@ document.getElementById("searchHarga").addEventListener("input",function(){
 });
 
 </script>
-<!-- Modal Daftar Populer -->
-<div id="popularModal" 
-     class="fixed inset-0 bg-black/70 flex items-center justify-center opacity-0 pointer-events-none z-50 transition-opacity duration-300">
-  <div class="relative modal-box p-6 w-80 max-h-[80vh] overflow-auto transform scale-95 transition-transform duration-300">
-    <h2 class="text-xl font-bold mb-4 text-green-400">Paket & Game Populer</h2>
-    
-    <!-- Filter -->
-    <div class="flex justify-center gap-3 mb-4">
-      <button onclick="selectPopular(this,'paket')" class="pop-btn">Paket</button>
-      <button onclick="selectPopular(this,'game')" class="pop-btn">Game</button>
-      <button onclick="selectPopular(this,'all')" class="pop-btn active">Semua</button>
-    </div>
-
-    <!-- List Populer -->
-    <ul id="popularList" class="space-y-2 max-h-64 overflow-y-auto">
-      <!-- Item akan dimasukkan lewat JS -->
-    </ul>
-
-    <button onclick="closePopular()" class="absolute top-3 right-3 text-gray-400 hover:text-white text-lg font-bold">×</button>
-  </div>
-</div>
-
-<style>
-/* Style list Populer */
-#popularList li {
-  background: #000;
-  border: 1px solid #22c55e;
-  border-radius: 0.75rem;
-  padding: 0.6rem 0.9rem;
-  color: #22c55e;
-  font-weight: 600;
-  box-shadow: 0 0 10px rgba(34,197,94,0.4), 0 0 25px rgba(34,197,94,0.2);
-  transition: transform 0.2s, box-shadow 0.2s;
-  cursor: pointer;
-}
-#popularList li:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px #22c55e, 0 0 40px #22c55e;
-}
-
-/* Filter tombol */
-.pop-btn.active {
-  background:#22c55e;
-  color:black;
-  transform:scale(1.1);
-  box-shadow:0 0 18px #22c55e, 0 0 40px #22c55e;
-}
-.pop-btn {
-  padding:.4rem .9rem;
-  border-radius:.6rem;
-  border:1px solid #22c55e;
-  color:#22c55e;
-  background:#000;
-  font-size:.8rem;
-  font-weight:600;
-  cursor:pointer;
-  transition:.25s;
-  box-shadow:0 0 6px rgba(34,197,94,.4);
-}
-.pop-btn:hover{
-  transform:scale(1.08);
-  box-shadow:0 0 12px rgba(34,197,94,.9);
-}
-</style>
 
 <!-- Kalkulator Modal -->
 <div id="calculatorModal"
      class="fixed inset-0 bg-black/70 flex items-center justify-center opacity-0 pointer-events-none z-50 transition-opacity duration-300">
-<div class="modal-box p-4 w-80 relative">
+<div class="bg-gray-900 text-white rounded-xl p-6 w-80 relative transform scale-95 transition-transform duration-300">
     <h2 class="text-xl font-bold mb-4">Kalkulator</h2>
-    <input id="calcDisplay"
- class="input-green mb-3 text-right text-xl font-bold">
-<div class="grid grid-cols-4 gap-2">
-  <!-- Baris 1 -->
-  <button onclick="appendCalc('7')" class="calc-btn text-black">7</button>
-  <button onclick="appendCalc('8')" class="calc-btn text-black">8</button>
-  <button onclick="appendCalc('9')" class="calc-btn text-black">9</button>
-  <button onclick="appendCalc('/')" class="calc-op">/</button>
+    <input type="text" id="calcDisplay" class="w-full mb-4 p-2 text-right text-lg rounded bg-gray-800" disabled>
+    <div class="grid grid-cols-4 gap-2">
+      <button onclick="appendCalc('7')" class="calc-btn">7</button>
+      <button onclick="appendCalc('8')" class="calc-btn">8</button>
+      <button onclick="appendCalc('9')" class="calc-btn">9</button>
+      <button onclick="appendCalc('/')" class="calc-btn text-yellow-400">/</button>
 
-  <!-- Baris 2 -->
-  <button onclick="appendCalc('4')" class="calc-btn text-black">4</button>
-  <button onclick="appendCalc('5')" class="calc-btn text-black">5</button>
-  <button onclick="appendCalc('6')" class="calc-btn text-black">6</button>
-  <button onclick="appendCalc('*')" class="calc-op">x</button>
+      <button onclick="appendCalc('4')" class="calc-btn">4</button>
+      <button onclick="appendCalc('5')" class="calc-btn">5</button>
+      <button onclick="appendCalc('6')" class="calc-btn">6</button>
+      <button onclick="appendCalc('*')" class="calc-btn text-yellow-400">x</button>
 
-  <!-- Baris 3 -->
-  <button onclick="appendCalc('1')" class="calc-btn text-black">1</button>
-  <button onclick="appendCalc('2')" class="calc-btn text-black">2</button>
-  <button onclick="appendCalc('3')" class="calc-btn text-black">3</button>
-  <button onclick="appendCalc('-')" class="calc-op">-</button>
+      <button onclick="appendCalc('1')" class="calc-btn">1</button>
+      <button onclick="appendCalc('2')" class="calc-btn">2</button>
+      <button onclick="appendCalc('3')" class="calc-btn">3</button>
+      <button onclick="appendCalc('-')" class="calc-btn text-yellow-400">-</button>
 
-  <!-- Baris 4 -->
-  <button onclick="appendCalc('0')" class="calc-btn text-black col-span-2">0</button>
-  <button onclick="appendCalc('.')" class="calc-btn text-black">.</button>
-  <button onclick="appendCalc('+')" class="calc-op">+</button>
+      <button onclick="appendCalc('0')" class="calc-btn col-span-2">0</button>
+      <button onclick="appendCalc('.')" class="calc-btn">.</button>
+      <button onclick="appendCalc('+')" class="calc-btn text-yellow-400">+</button>
 
-  <!-- Tombol khusus -->
-  <button onclick="clearCalc()" class="calc-special bg-white text-black">C</button>
-  <button onclick="backspace()" class="calc-special bg-white text-black">X</button>
-  <button onclick="calculate()" class="calc-special bg-white text-black">=</button>
-</div>
-
+      <button onclick="backspace()" class="calc-btn bg-orange-500 hover:bg-orange-600">⌫</button>
+      <button onclick="clearCalc()" class="calc-btn bg-red-500 hover:bg-red-600">C</button>
+      <button onclick="calculate()" class="calc-btn bg-green-500 hover:bg-green-600">=</button>
+    </div>
     <button onclick="closeCalculator()" class="absolute top-3 right-3 text-gray-400 hover:text-white text-lg font-bold">×</button>
   </div>
 </div>
@@ -1184,8 +967,8 @@ function openPaket(op,cat){
  paketList.innerHTML="";
  operators[op][cat].forEach((p,i)=>{
   paketList.innerHTML+=`
-  <div class="card">${p.nama} <span class="price">${p.Cari}</span>
-  <button class="ket-btn" onclick="toggleKet('${op}${cat}${i}')">?</button>
+  <div class="card">${p.nama} <span class="price">${p.harga}</span>
+  <button class="ket-btn" onclick="toggleKet('${op}${cat}${i}')">?</button></div>
   <div id="${op}${cat}${i}" class="ket-box">${p.ket}</div>`;
  });
 }
