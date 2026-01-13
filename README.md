@@ -8,6 +8,22 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
+#popularList{
+  transition:.3s;
+}
+
+.fade-out{
+  opacity:0;
+  transform: translateY(10px) scale(.95);
+  filter: blur(5px);
+}
+
+.fade-in{
+  opacity:1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
+
 :root{
   --bg:#050505;
   --card:#0b0b0b;
@@ -171,6 +187,35 @@ body{
   font-size:.95rem;
 }
 @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+/* TAB ANIMATION */
+.tab-content{
+  animation: fadeSlide .35s ease;
+}
+
+@keyframes fadeSlide{
+  from{
+    opacity:0;
+    transform: translateY(12px) scale(.98);
+    filter: blur(4px);
+  }
+  to{
+    opacity:1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+/* efek tombol aktif */
+.tab-btn{
+  transition:.25s;
+}
+
+.tab-btn.active{
+  background:#22c55e;
+  color:black;
+  box-shadow:0 0 15px rgba(34,197,94,.8);
+}
+
 </style>
 </head>
 
@@ -200,7 +245,7 @@ body{
 <div class="flex flex-col items-center">
   <button onclick="openHarga()"
     class="w-24 border border-green-400 text-green-400 text-xs py-2 rounded-md hover:bg-green-400 hover:text-black transition">
-    Cari di sini
+    Harga
   </button>
 </div>
 
@@ -246,11 +291,11 @@ body{
     <h2 class="text-xl font-bold mb-4">Paket & Game Populer</h2>
     
     <!-- Filter -->
-    <div class="flex justify-center gap-2 mb-4">
-      <button onclick="showPopular('paket')" class="bg-green-500 hover:bg-green-600 px-3 py-1 rounded text-sm font-semibold">Paket</button>
-      <button onclick="showPopular('game')" class="bg-yellow-500 hover:bg-yellow-600 px-3 py-1 rounded text-sm font-semibold">Game</button>
-      <button onclick="showPopular('all')" class="bg-blue-500 hover:bg-blue-600 px-3 py-1 rounded text-sm font-semibold">Semua</button>
-    </div>
+<div class="flex justify-center gap-2 mb-4">
+  <button onclick="showPopular('paket', this)" class="tab-btn px-3 py-1 rounded text-sm font-semibold border border-green-400">Paket</button>
+  <button onclick="showPopular('game', this)" class="tab-btn px-3 py-1 rounded text-sm font-semibold border border-yellow-400">Game</button>
+  <button onclick="showPopular('all', this)" class="tab-btn px-3 py-1 rounded text-sm font-semibold border border-blue-400">Semua</button>
+</div>
 
     <ul id="popularList" class="list-disc pl-5 space-y-2">
       <!-- Data akan dimasukkan lewat JS -->
@@ -278,7 +323,9 @@ function openPopular() {
   const modal = document.getElementById('popularModal');
   modal.classList.remove('pointer-events-none', 'opacity-0');
   modal.querySelector('div').classList.remove('scale-95');
-  showPopular('all'); // default tampil semua
+
+  const firstBtn = document.querySelector(".tab-btn:last-child");
+  showPopular('all', firstBtn);
 }
 
 function closePopular() {
@@ -287,31 +334,37 @@ function closePopular() {
   modal.querySelector('div').classList.add('scale-95');
 }
 
-function showPopular(type) {
+function showPopular(type, btn){
   const list = document.getElementById('popularList');
-  list.innerHTML = '';
 
-  // Tentukan items
-  let items = [];
-  if(type === 'paket') items = popularItems.paket;
-  else if(type === 'game') items = popularItems.game;
-  else items = [...popularItems.paket, ...popularItems.game];
+  // animasi keluar
+  list.classList.add("fade-out");
 
-  // Tampilkan items
-  items.forEach(item => {
-    const li = document.createElement('li');
-    li.textContent = item;
-    list.appendChild(li);
-  });
+  setTimeout(()=>{
+    list.innerHTML="";
 
-  // ===== Highlight menu aktif =====
-  const buttons = document.querySelectorAll('#popularModal button');
-  buttons.forEach(btn => btn.classList.remove('menu-active'));
-  
-  if(type === 'paket') document.querySelector('#popularModal button[onclick="showPopular(\'paket\')"]').classList.add('menu-active');
-  else if(type === 'game') document.querySelector('#popularModal button[onclick="showPopular(\'game\')"]').classList.add('menu-active');
-  else if(type === 'all') document.querySelector('#popularModal button[onclick="showPopular(\'all\')"]').classList.add('menu-active');
+    let items=[];
+    if(type==="paket") items = popularItems.paket;
+    else if(type==="game") items = popularItems.game;
+    else items = [...popularItems.paket,...popularItems.game];
+
+    items.forEach(item=>{
+      const li=document.createElement("li");
+      li.textContent=item;
+      li.className="tab-content";
+      list.appendChild(li);
+    });
+
+    list.classList.remove("fade-out");
+    list.classList.add("fade-in");
+
+    // tombol aktif glow
+    document.querySelectorAll(".tab-btn").forEach(b=>b.classList.remove("active"));
+    if(btn) btn.classList.add("active");
+
+  },200);
 }
+
 function openHarga(){
   const m = document.getElementById("hargaModal");
   m.classList.remove("opacity-0","pointer-events-none");
@@ -978,7 +1031,7 @@ function openPaket(op,cat){
  operators[op][cat].forEach((p,i)=>{
   paketList.innerHTML+=`
   <div class="card">${p.nama} <span class="price">${p.harga}</span>
-  <button class="ket-btn" onclick="toggleKet('${op}${cat}${i}')">✉️</button></div>
+  <button class="ket-btn" onclick="toggleKet('${op}${cat}${i}')">?</button></div>
   <div id="${op}${cat}${i}" class="ket-box">${p.ket}</div>`;
  });
 }
@@ -1019,4 +1072,3 @@ function openGameDetail(g){
 
 </body>
 </html>
-
