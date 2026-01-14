@@ -1031,7 +1031,7 @@ function openPaket(op,cat){
  operators[op][cat].forEach((p,i)=>{
   paketList.innerHTML+=`
   <div class="card">${p.nama} <span class="price">${p.harga}</span>
-  <button class="ket-btn" onclick="toggleKet('${op}${cat}${i}')">?</button></div>
+  <button class="ket-btn" onclick="toggleKet('${op}${cat}${i}')">✉️</button></div>
   <div id="${op}${cat}${i}" class="ket-box">${p.ket}</div>`;
  });
 }
