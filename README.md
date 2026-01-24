@@ -307,7 +307,7 @@ body{
 <script>
 const popularItems = {
   paket: [
-    "Paket 10GB Reguler 30 Hari",
+    "Freedom Mini 7GB 7 Hari Rp 26.000",
     "Xtra On 2GB All Jaringan 30 Hari",
     "Paket 3GB Reguler 24 Jam",
     "Paket 6GB Reguler 30 Hari"
