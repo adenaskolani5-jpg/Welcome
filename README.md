@@ -629,7 +629,7 @@ const operators = {
       {nama: "Freedom Internet 100GB 90 Hari", harga: "Rp 255.000", ket: "Note: Freedom Internet Mobo"},
       {nama: "Freedom Internet 250GB 90 Hari", harga: "Rp 305.000", ket: "Note: Freedom Internet Mobo"},
       {nama: "Freedom Internet 200GB 180 Hari", harga: "Rp 450.000", ket: "Note: Tidak Menambah Masa Aktif Kartu Hanya Menambah Masa Aktif Kuota"},
-    Kuota utama semua jaringan  {nama: "Freedom Internet 1024GB 360 Hari", harga: "Rp 1.000.000", ket: "Note: Tidak Menambah Masa Aktif Kartu Hanya Menambah Masa Aktif Kuota"},
+      {nama: "Freedom Internet 1024GB 360 Hari", harga: "Rp 1.000.000", ket: "Note: Tidak Menambah Masa Aktif Kartu Hanya Menambah Masa Aktif Kuota"},
     ],
     "Paket Unlimited": [
       {nama: "1GB + 2GB + Aplikasi Unlimited 6 Hari", harga: "Rp 20.000", ket: "UNREG paket terlebih dahulu"},
