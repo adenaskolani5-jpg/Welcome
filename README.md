@@ -308,9 +308,9 @@ body{
 const popularItems = {
   paket: [
     "Freedom Mini 7GB 7 Hari Rp 26.000",
-    "Xtra On 2GB All Jaringan 30 Hari",
-    "Paket 3GB Reguler 24 Jam",
-    "Paket 6GB Reguler 30 Hari"
+    "Freedom Mini 5 GB 2 Hari Rp 13.000",
+    "Freedom Internet 10GB 28 Hari Rp 40.000",
+    "Freedom Mini 6GB 5 Hari Rp 20.000"
   ],
   game: [
     "Top Up Free Fire 100 Diamond",
