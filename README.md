@@ -589,7 +589,7 @@ const operators = {
       {nama: "Freedom Mini 4GB 20 Hari", harga: "Rp 29.000", ket: "Kuota utama semua jaringan"},
       {nama: "Freedom Mini 15GB 7 Hari (Unreg)", harga: "Rp 31.000", ket: "Berlaku Nasional, namun penggunaan mengikuti Regional Wilayah saat pengisian"},
       {nama: "Freedom Mini 10GB 14 Hari", harga: "Rp 30.000", ket: "Berlaku Nasional"},
-      {nama: "Freedom Mini 17GB 7 Hari", harga: "Rp 32.000", ket: "Kuota utama semua jaringan"}
+      {nama: "Freedom Mini 17GB 7 Hari", harga: "Rp 32.000", ket: "Kuota utama semua jaringan"},
     ],
     "Paket Internet Bulanan": [
       {nama: "100MB 24 Jam 30 Hari", harga: "Rp 2.000", ket: "Paket paling hemat bulanan"},
