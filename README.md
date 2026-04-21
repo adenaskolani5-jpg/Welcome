@@ -575,7 +575,7 @@ const operators = {
       {nama: "Indosat Yellow 1GB 7 Hari", harga: "Rp 10.000", ket: "Pastikan tidak ada paket internet yang masih aktif"},
       {nama: "Indosat Yellow 1GB 15 Hari", harga: "Rp 12.000", ket: "Pastikan tidak ada paket internet yang masih aktif"},
       {nama: "Freedom Mini 3GB 1 Hari", harga: "Rp 10.000", ket: "Kuota utama semua jaringan"},
-      {nama: "Freedom Mini 5GB 2 Hari", harga: "Rp 12.000", ket: "Kuota utama semua jaringan"},
+      {nama: "Freedom Mini 5GB 2 Hari", harga: "Rp 13.000", ket: "Kuota utama semua jaringan"},
       {nama: "Freedom Mini 3GB 3 Hari", harga: "Rp 15.000", ket: "Kuota utama semua jaringan"},
       {nama: "Freedom Mini 2,5GB 5 Hari (Unreg)", harga: "Rp 16.000", ket: "Berlaku Nasional, namun penggunaan mengikuti Regional Wilayah saat pengisian"},
       {nama: "Freedom Mini 2,5GB 5 Hari ", harga: "Rp 17.000", ket: "-kuota Utama 2,5GB: -Zona Plus: 3GB -Zona Super Plus: 4GB"},
@@ -587,8 +587,9 @@ const operators = {
       {nama: "Freedom Mini 8GB 5 Hari", harga: "Rp 23.000", ket: "Kuota utama semua jaringan"},
       {nama: "Freedom Mini 9GB 7 Hari", harga: "Rp 28.000", ket: "Kuota utama semua jaringan"},
       {nama: "Freedom Mini 4GB 20 Hari", harga: "Rp 29.000", ket: "Kuota utama semua jaringan"},
-      {nama: "Freedom Mini 15GB 7 Hari (Unreg)", harga: "Rp 30.000", ket: "Berlaku Nasional, namun penggunaan mengikuti Regional Wilayah saat pengisian"},
-      {nama: "Freedom Mini 15GB 7 Hari", harga: "Rp 32.000", ket: "Kuota utama semua jaringan"}
+      {nama: "Freedom Mini 15GB 7 Hari (Unreg)", harga: "Rp 31.000", ket: "Berlaku Nasional, namun penggunaan mengikuti Regional Wilayah saat pengisian"},
+      {nama: "Freedom Mini 10GB 14 Hari", harga: "Rp 30.000", ket: "Berlaku Nasional"},
+      {nama: "Freedom Mini 17GB 7 Hari", harga: "Rp 32.000", ket: "Kuota utama semua jaringan"}
     ],
     "Paket Internet Bulanan": [
       {nama: "100MB 24 Jam 30 Hari", harga: "Rp 2.000", ket: "Paket paling hemat bulanan"},
@@ -621,12 +622,14 @@ const operators = {
       {nama: "Freedom Internet 45GB 28 Hari", harga: "Rp 96.000", ket: "Kuota utama semua jaringan"},
       {nama: "Freedom Internet 50GB 28 Hari", harga: "Rp 113.000", ket: "-All Jaringan 24 jam -Jalur Mobo Indosat tanpa delay"},
       {nama: "Freedom Internet 5G 70GB 28 Hari", harga: "Rp 120.000", ket: "-20GB Kuota Jaringan 5G -50GB All Jaringan"},
-      {nama: "Freedom Internet 65GB 28 Hari", harga: "Rp 121.000", ket: "Kuota utama semua jaringan"},
-      {nama: "Freedom Internet 150GB 28 Hari", harga: "Rp 143.000", ket: "-All Jaringan 24 jam -Jalur Mobo Indosat tanpa delay"},
+      {nama: "Freedom Internet 100GB 28 Hari", harga: "Rp 115.000", ket: "Kuota utama semua jaringan"},
+      {nama: "Freedom Internet 150GB 28 Hari", harga: "Rp 135.000", ket: "-All Jaringan 24 jam -Jalur Mobo Indosat tanpa delay"},
       {nama: "Freedom Internet 200GB 28 Hari", harga: "Rp 190.000", ket: "Untuk kebutuhan ekstrem"},
       {nama: "Freedom Internet  250GB 28 Hari", harga: "Rp 244.000", ket: "Kuota utama semua jaringan"},
+      {nama: "Freedom Internet 100GB 90 Hari", harga: "Rp 255.000", ket: "Note: Freedom Internet Mobo"},
+      {nama: "Freedom Internet 250GB 90 Hari", harga: "Rp 305.000", ket: "Note: Freedom Internet Mobo"},
       {nama: "Freedom Internet 200GB 180 Hari", harga: "Rp 450.000", ket: "Note: Tidak Menambah Masa Aktif Kartu Hanya Menambah Masa Aktif Kuota"},
-      {nama: "Freedom Internet 1024GB 360 Hari", harga: "Rp 1.000.000", ket: "Note: Tidak Menambah Masa Aktif Kartu Hanya Menambah Masa Aktif Kuota"},
+    Kuota utama semua jaringan  {nama: "Freedom Internet 1024GB 360 Hari", harga: "Rp 1.000.000", ket: "Note: Tidak Menambah Masa Aktif Kartu Hanya Menambah Masa Aktif Kuota"},
     ],
     "Paket Unlimited": [
       {nama: "1GB + 2GB + Aplikasi Unlimited 6 Hari", harga: "Rp 20.000", ket: "UNREG paket terlebih dahulu"},
